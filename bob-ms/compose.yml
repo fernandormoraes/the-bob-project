@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  eureka-server:
+    image: eurekaserver
+    build: eurekaserver/
+    ports:
+      - 8761:8761
+  api-users:
+    image: apiusers
+    build: users/
+    ports:
+      - 8888:8888
+  api-courses:
+    image: apicourses
+    build: courses/
+    ports:
+      - 8889:8889      
+  api-gateway:
+    build: apigateway/
+    image: apigateway
+    ports:
+      - 8080:8080
