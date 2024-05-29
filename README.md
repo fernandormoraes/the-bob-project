@@ -2,10 +2,6 @@
 
 A case study on Micro Frontend Architecture approaches (Microservices Architecture, Mobile, Web).
 
-### Why Bob?
-
-It's my turtle's name.
-
 ### Stage
 
 This project is in the development and experimental phase, and I do not recommend any practices or approaches presented here yet.
