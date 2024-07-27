@@ -1,22 +1,72 @@
 version: '3.8'
 services:
   eureka-server:
+    container_name: eureka-server
+    entrypoint: ./.docker/entrypoint.sh
     image: eurekaserver
     build: eurekaserver/
     ports:
       - 8761:8761
+    volumes:
+      - ./eurekaserver:/app        
   api-users:
+    container_name: api-users
+    entrypoint: ./.docker/entrypoint.sh
     image: apiusers
     build: users/
+    environment:
+      - USERS_DATABASE=jdbc:postgresql://db:5432/postgres
+      - USERS_USERNAME=postgres
+      - USERS_PASSWORD=postgres
     ports:
       - 8888:8888
+    volumes:
+      - ./users:/app        
   api-courses:
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: api-courses
     image: apicourses
     build: courses/
+    environment:
+      - COURSES_DATABASE=jdbc:postgresql://db:5432/postgres
+      - COURSES_USERNAME=postgres
+      - COURSES_PASSWORD=postgres      
     ports:
-      - 8889:8889      
+      - 8889:8889
+    volumes:
+      - ./courses:/app        
+  api-courses-mobile:
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: api-courses-mobile
+    image: apicoursesmobile
+    build: courses-mobile-rsbf/
+    environment:
+      - COURSES_ENDPOINT=http://apigateway:8080/courses
+    ports:
+      - 3000:3000
+    volumes:
+      - ./courses-mobile-rsbf:/app        
   api-gateway:
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: api-gateway
     build: apigateway/
     image: apigateway
     ports:
-      - 8080:8080
+      - 8080:8080      
+    volumes:
+      - ./apigateway:/app  
+  db:
+    build:
+      context: ./.docker/postgres
+      dockerfile: Dockerfile
+    command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'  -p 5432
+    container_name: db
+    volumes:
+      - './db/postgres/db:/var/lib/postgresql/data'
+      - './.docker/postgres/config/postgresql.conf:/etc/postgresql/postgresql.conf'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432' 
+    

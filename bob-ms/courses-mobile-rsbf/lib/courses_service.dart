@@ -7,7 +7,7 @@ class CoursesService {
   CoursesService({required Dio dio}) : _dio = dio;
 
   Future<CoursesResponseModel> getCourses(String authorization) async {
-    final response = await _dio.get('http://localhost:8889/api/courses/',
+    final response = await _dio.get('http://api-gateway:8080/api/courses/',
         options: Options(headers: {'Authorization': authorization}));
 
     final coursesModel = CoursesResponseModel.fromJson(response.data);

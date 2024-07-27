@@ -51,7 +51,7 @@ widget root = Scaffold(
           child: Column(
             children: [
               MaterialIcon(codePoint: 0xe491, size: 54.0),
-              Text(text: ["Bem vindo(a)"]),
+              Text(text: ["Welcome"]),
               Text(text: ["Fernando Moraes"], style: {fontSize: 24.0}),
             ]
           )

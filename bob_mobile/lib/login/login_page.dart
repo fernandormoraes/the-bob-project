@@ -1,8 +1,15 @@
+import 'package:bob_mobile/login/login_service.dart';
+import 'package:bob_mobile/shared/cache/user_cache.dart';
+import 'package:bob_mobile/shared/exceptions/unauthorized_exception.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +46,7 @@ class LoginPage extends StatelessWidget {
                       child: Column(
                     children: [
                       TextFormField(
+                        controller: usernameController,
                         textInputAction: TextInputAction.next,
                         decoration: InputDecoration(
                           hintText: "Username",
@@ -49,6 +57,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 8),
                       TextFormField(
+                        controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           hintText: "Password",
@@ -64,14 +73,39 @@ class LoginPage extends StatelessWidget {
                           color: Theme.of(context)
                               .buttonTheme
                               .colorScheme
-                              ?.background,
+                              ?.surface,
                           shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(8)),
                               side: BorderSide(width: 0.5)),
                           elevation: 1.0,
-                          onPressed: () {
-                            Modular.to.navigate('/home');
+                          onPressed: () async {
+                            try {
+                              String token = await UserService(
+                                      dio: Dio(), cache: UserCache())
+                                  .login(
+                                      username: usernameController.text,
+                                      password: passwordController.text);
+
+                              if (token.isNotEmpty) {
+                                Modular.to.navigate('/home');
+                              }
+                            } on UnauthorizedException catch (e) {
+                              if (!context.mounted) return;
+
+                              await showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                        title: const Text("Unauthorized"),
+                                        content: Text(e.toString()),
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context),
+                                              child: const Text("OK"))
+                                        ],
+                                      ));
+                            }
                           },
                           child: const Text(
                             "LOGIN",

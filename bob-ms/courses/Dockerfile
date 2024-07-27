@@ -3,12 +3,6 @@ FROM openjdk:21-jdk
 
 RUN microdnf install findutils
 
-COPY ./ /app
-
 WORKDIR /app
 
-RUN chmod +x ./gradlew
-
-RUN ./gradlew build -x test
-
-ENTRYPOINT ["java","-jar", "/build/libs/course-0.0.1-SNAPSHOT.war"]
+ENTRYPOINT ["bash", "/app/.docker/entrypoint.sh"]

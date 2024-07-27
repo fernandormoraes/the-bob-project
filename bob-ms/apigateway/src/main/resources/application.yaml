@@ -11,14 +11,17 @@ spring:
         gateway:
             routes:
                 - id: api-auth
-                  uri: 'http://localhost:8888/'
+                  uri: 'http://api-users:8888/'
                   predicates:
-                      - Path=/api/**
-                      - Header=Authorization, \.*?
+                      - Path=/api/users/**
                 - id: api-courses
-                  uri: 'http://localhost:8889/'
+                  uri: 'http://api-courses:8889/'
                   predicates:
                       - Path=/api/courses/**
+                - id: api-courses-mobile
+                  uri: 'http://api-courses-mobile:3000/'
+                  predicates:
+                      - Path=/api/courses-mobile/**
             globalcors:
               cors-configurations:
                 '[/**]':

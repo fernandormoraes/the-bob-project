@@ -1,16 +1,27 @@
+import 'package:bob_mobile/const.dart';
+import 'package:bob_mobile/shared/cache/user_cache.dart';
+import 'package:bob_mobile/shared/exceptions/unauthorized_exception.dart';
 import 'package:dio/dio.dart';
 
 class HomeService {
   final Dio _dio;
+  final UserCache _cache;
 
-  HomeService({required Dio dio}) : _dio = dio;
+  static const String coursesUrl = '$apiBaseUrl/courses-mobile';
+
+  HomeService({required Dio dio, required UserCache cache})
+      : _dio = dio,
+        _cache = cache;
 
   Future<String> getCourses() async {
-    final res = await _dio.get('http://10.0.2.2:3000/courses-mobile',
-        options: Options(headers: {
-          'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJGZXJuYW5kbyBNb3JhZXMiLCJleHAiOjE3MTU0Njk4MDEsImlhdCI6MTcxMjg3NzgwMSwidXNlcm5hbWUiOiJmZXJuYW5kb21vcmFlc3ByYzJAZ21haWwuY29tIn0.S0Snys4uNxE1fxEJj936QtxmdqX67LvXApCoEAX4pJY'
-        }));
+    String authToken = await _cache.getToken();
+
+    final res = await _dio.get(coursesUrl,
+        options: Options(headers: {'Authorization': authToken}));
+
+    if (res.statusCode == 401) {
+      throw UnauthorizedException();
+    }
 
     return res.data;
   }
