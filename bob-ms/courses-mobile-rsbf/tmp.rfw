@@ -10,7 +10,7 @@ widget root = Scaffold(
           child: Column(
             children: [
               MaterialIcon(codePoint: 0xe491, size: 54.0),
-              Text(text: ["Bem vindo(a)"]),
+              Text(text: ["Welcome"]),
               Text(text: ["Fernando Moraes"], style: {fontSize: 24.0}),
             ]
           )
@@ -48,10 +48,10 @@ child: Column(
   mainAxisAlignment: "start",
   crossAxisAlignment: "start",
   children: [
-      Text(text: "Curso de Python"), 
+      Text(text: "CURSO DE JAVA"), 
       SizedBox(height: 8.0),
       SizedBox(height: 100.0, width: 200.0, 
-        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://www.freecodecamp.org/news/content/images/2022/02/Banner-10.png")
+        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://www.iped.com.br/img/cursos/62101.jpg")
       )
     ]
   )
@@ -61,10 +61,10 @@ child: Column(
   mainAxisAlignment: "start",
   crossAxisAlignment: "start",
   children: [
-      Text(text: "Curso de Java"), 
+      Text(text: "CURSO DE PYTHON"), 
       SizedBox(height: 8.0),
       SizedBox(height: 100.0, width: 200.0, 
-        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://aprender.buzzero.com/buzzers/paulo-victor/60165/HotSiteImage.jpg")
+        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://asimov.academy/wp-content/uploads/2023/12/curso-python-basico.webp")
       )
     ]
   )
@@ -74,10 +74,10 @@ child: Column(
   mainAxisAlignment: "start",
   crossAxisAlignment: "start",
   children: [
-      Text(text: "Curso de Elixir"), 
+      Text(text: "JAVASCRIPT COMPLETO"), 
       SizedBox(height: 8.0),
       SizedBox(height: 100.0, width: 200.0, 
-        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://i.ytimg.com/vi/WXG4qr87yBY/maxresdefault.jpg")
+        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://i.ytimg.com/vi/8i4ltPu5a5w/maxresdefault.jpg")
       )
     ]
   )

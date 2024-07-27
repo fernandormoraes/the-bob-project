@@ -31,9 +31,9 @@ class SecurityConfig(private val userDetailsService: UserDetail, private val tok
         http.csrf{ it.disable() }
 
         http.authorizeHttpRequests() {
-            it.requestMatchers(HttpMethod.POST, "/api/login").permitAll()
-            it.requestMatchers(HttpMethod.POST, "/api/signup").permitAll()
-            it.requestMatchers(HttpMethod.GET, "/api/testusers").permitAll()
+            it.requestMatchers(HttpMethod.POST, "/api/users/login").permitAll()
+            it.requestMatchers(HttpMethod.POST, "/api/users/signup").permitAll()
+            it.requestMatchers(HttpMethod.GET, "/api/users/testusers").permitAll()
             it.requestMatchers("/api/**").authenticated()
         }
 

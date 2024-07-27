@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 class HomeController {
     @Autowired
     private val userRepository: UserRepository? = null
