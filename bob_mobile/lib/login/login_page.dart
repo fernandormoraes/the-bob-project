@@ -1,9 +1,9 @@
 import 'package:bob_mobile/login/login_service.dart';
-import 'package:bob_mobile/shared/cache/user_cache.dart';
-import 'package:bob_mobile/shared/exceptions/unauthorized_exception.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shared_app/cache/user_cache.dart';
+import 'package:shared_app/exceptions/unauthorized_exception.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();

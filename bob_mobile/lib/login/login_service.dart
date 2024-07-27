@@ -1,6 +1,6 @@
-import 'package:bob_mobile/const.dart';
-import 'package:bob_mobile/shared/cache/user_cache.dart';
+import 'package:shared_app/const.dart';
 import 'package:dio/dio.dart';
+import 'package:shared_app/cache/user_cache.dart';
 
 class UserService {
   final Dio _dio;

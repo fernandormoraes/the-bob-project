@@ -1,6 +1,6 @@
-import 'package:bob_mobile/home/home_page.dart';
 import 'package:bob_mobile/login/login_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:home_app/home_app.dart';
 
 class AppModule extends Module {
   @override
