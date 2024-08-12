@@ -4,7 +4,7 @@ A case study on Micro Frontend Architecture approaches (Microservices Architectu
 
 ## Publications
 
-The directories *bob-ms* and *bob_mobile* contain the code available for the case study presented in the paper *A New Integration Approach to support the Development of Build-time Micro Frontend Architecture Applications*, which was accepted at *SBES - Congresso Brasileiro de Software: Teoria e Prática (CBSoft)* in the IIER track.
+The directories *bob-ms* and *bob_mobile* contain the code available for the case study presented in the paper *"A New Integration Approach to support the Development of Build-time Micro Frontend Architecture Applications"*, which was accepted at *SBES* (Brazilian Symposium on Software Engineering) in the *IIER* (Insightful Ideas and Emerging Results Track) track.
 
 ## Requirements
 
