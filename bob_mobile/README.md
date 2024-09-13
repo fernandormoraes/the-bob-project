@@ -1,16 +1,23 @@
-# bob_mobile
 
-A new Flutter project.
+# Bob_mobile
 
-## Getting Started
+## Directory structure
 
-This project is a starting point for a Flutter application.
+*.* The root folder contains the application responsible for being the application container (In MFA context) of the MFApps.
 
-A few resources to get you started if this is your first Flutter project:
+*home_app.* This folder contains the MFApp responsible for rendering the home app based on RSBF UI code.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+*shared_app.* This folder contains shared libraries for MFApps and Container application.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+The *bob_mobile* directory contains the mobile application developed in flutter, which consumes the RSBF services and interpret UI using rfw library.
+
+After Flutter SDK was installed and with the running microservices, it is necessary to set the API Gateway host in Flutter Project.
+
+    ./bob_mobile/shared_app/const.dart
+    const String apiBaseUrl = 'http://10.0.2.2:8080/api'; // Change host/port if necessary to the API Gateway.
+
+To run the Flutter application:
+
+    flutter run
