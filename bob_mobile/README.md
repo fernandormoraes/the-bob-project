@@ -21,3 +21,9 @@ After Flutter SDK was installed and with the running microservices, it is necess
 To run the Flutter application:
 
     flutter run
+
+### Login
+
+Following the steps to insert data presented in *Bob-ms* section, it is possible to login in the application by using *email* and *password*.
+
+The home page will list a carroussel with courses and a Drawer menu, every piece of this UI comes from a RSBF response.
