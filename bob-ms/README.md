@@ -5,11 +5,17 @@ This directory presents all the microservices and RSBF's of the case study.
 ## Directory structure
 
 *apigateway.* This is the API Gateway reponsible for providing an unique entrypoint for microservices applications.
+
 *users.* This is Users microservice, providing endpoints for signup and login features.
+
 *courses.* This is Courses microservice, providing endpoints for listing Courses, Modules and Content.
+
 *eurekaserver.* This folder contains the Eureka Server, responsible for Service Discovery.
+
 *courses-mobile-rsbf.* This folder contains the code responsible for RSBF service for the Home Page Mobile application.
+
 *.docker/postgres.* This folder contains PostgreSQL database configuration.
+
 
 Below we present installation instructions (they are the same presented in the main README of repository).
 
