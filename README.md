@@ -108,7 +108,7 @@ The home page will list a carroussel with courses and a Drawer menu, every piece
 
 The *bob-mfa* directory contains code for a web application that is not part of the aforementioned publication and it is a work in progress.
 
-### Technologies
+## Technologies
 **Microservices Architecture**
 - Kotlin
 - Spring Framework
