@@ -1,13 +1,12 @@
 import 'package:bob_mobile/login/login_service.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:shared_app/cache/user_cache.dart';
 import 'package:shared_app/exceptions/unauthorized_exception.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final UserService userService = Modular.get<UserService>();
 
   LoginPage({super.key});
 
@@ -81,11 +80,9 @@ class LoginPage extends StatelessWidget {
                           elevation: 1.0,
                           onPressed: () async {
                             try {
-                              String token = await UserService(
-                                      dio: Dio(), cache: UserCache())
-                                  .login(
-                                      username: usernameController.text,
-                                      password: passwordController.text);
+                              String token = await userService.login(
+                                  username: usernameController.text,
+                                  password: passwordController.text);
 
                               if (token.isNotEmpty) {
                                 Modular.to.navigate('/home');

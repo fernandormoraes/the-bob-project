@@ -1,4 +1,10 @@
-import core.widgets;
+class CoursesPage {
+  final String widgetCourses;
+
+  CoursesPage({required this.widgetCourses});
+
+  String generate() {
+    return '''import core.widgets;
 import core.material;
 
 widget root = Scaffold(
@@ -31,48 +37,7 @@ widget root = Scaffold(
           padding: [24.0, 0.0, 0.0, 0.0],
           child: Text(text: ["Courses"], style: {fontSize: 32.0}),
         ),
-        Padding(
-  padding: [24.0],
-  child: Card(
-    child: Padding(
-        padding: [8.0],
-        child: SizedBox(
-          height: 170.0,
-          child: ListView(
-            scrollDirection: "horizontal",
-            shrinkWrap: true,
-            itemCount: 2,
-            children: [Padding(
-padding: [16.0], 
-child: Column(
-  mainAxisAlignment: "start",
-  crossAxisAlignment: "start",
-  children: [
-      Text(text: "CURSO DE JAVA"),
-      SizedBox(height: 8.0),
-      SizedBox(height: 100.0, width: 200.0, 
-        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToO5nvgGaLTBS2sDH9oMcj1qhVF9EX_xzOtg&s")
-      )
-    ]
-  )
-), Padding(
-padding: [16.0], 
-child: Column(
-  mainAxisAlignment: "start",
-  crossAxisAlignment: "start",
-  children: [
-      Text(text: "CURSO DE PYTHON"),
-      SizedBox(height: 8.0),
-      SizedBox(height: 100.0, width: 200.0, 
-        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://asimov.academy/wp-content/uploads/2023/12/curso-python-basico.webp")
-      )
-    ]
-  )
-)]
-          )
-        )
-      ))
-    ),
+        $widgetCourses
         Padding(
           padding: [24.0, 0.0, 0.0, 0.0],
           child: Text(text: ["Next to watch"], style: {fontSize: 32.0}),
@@ -83,4 +48,6 @@ child: Column(
           child: Text(text: ["Nothing yet. Let's start some courses?"], style: {fontSize: 16.0})
         )
     ])
-);
+);''';
+  }
+}

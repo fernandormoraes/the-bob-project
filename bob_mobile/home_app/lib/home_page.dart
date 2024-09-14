@@ -1,14 +1,14 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:home_app/home_service.dart';
 import 'package:rfw/formats.dart';
 import 'package:rfw/rfw.dart';
-import 'package:shared_app/cache/user_cache.dart';
 import 'package:shared_app/remote_material_widgets.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final HomeService homeService = Modular.get<HomeService>();
+
+  HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -26,7 +26,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // Local widget library:
     _runtime.update(coreName, createCoreWidgets());
 
     _runtime.update(coreMaterial, createRemoteMaterialWidgets());
@@ -37,7 +36,7 @@ class _HomePageState extends State<HomePage> {
             '''import core.widgets; import core.material; widget root = Scaffold(body: Center(child: CircularProgressIndicator()));'''));
 
     Future.delayed(const Duration(seconds: 1)).then((value) {
-      HomeService(dio: Dio(), cache: UserCache()).getCourses().then((value) {
+      widget.homeService.getCourses().then((value) {
         debugPrint(value);
 
         _runtime.update(mainName, parseLibraryFile(value));
