@@ -173,5 +173,5 @@ insert into users_roles (user_id, roles_id) values (1, 1);
 
 insert into course (cover, description) values ('https://media.geeksforgeeks.org/wp-content/uploads/20240104114808/Free-JavaScript-Courses.jpg', 'Javascript Course');
 
-insert into course (cover, description) values ('https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230305131111/Java-programming.png', 'Javascript Course');
+insert into course (cover, description) values ('https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230305131111/Java-programming.png', 'Java Course');
 
