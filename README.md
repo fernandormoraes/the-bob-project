@@ -26,9 +26,22 @@ The *bob-ms* directory contains all the microservice structure of the case study
 
     docker compose -f compose.yml up
 
+### Run microservices with a data-ready database
+
+To run the application with pre-inserted data in database and avoid the section to prepare database, you can run *compose-case-study.yml* instead of *compose.yml*:
+
+    docker compose -f compose.case-study.yml up
+
+Now, it is possible to *login* in the Mobile application with the following user:
+
+*Username:* test@mail.com
+*Password:* 123
+
+The next section (preparing database) can be skipped after running *compose-case-study.yml*
+
 ### Preparing Database to reproduce the Case Study
 
-Initially, only tables and columns migrations are running in the project, which means that although the database is ready, there is no data inserted at the start of the microservices.
+Initially, only tables and columns creation migrations are running in the project, which means that although the database is ready, there is no data inserted at the start of the microservices.
 
 The first step to ensure a running application is to insert the available user roles. In the *roles* table insert the following:
 
