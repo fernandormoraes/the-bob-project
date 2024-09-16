@@ -1,10 +1,11 @@
+
 # The Bob Project 🐢
 
 A case study on Micro Frontend Architecture approaches (Microservices Architecture, Mobile, Web).
 
 ## Publications
 
-The directories *bob-ms* and *bob_mobile* contain the code available for the case study presented in the paper *"A New Integration Approach to support the Development of Build-time Micro Frontend Architecture Applications"*, which was accepted at *SBES* (Brazilian Symposium on Software Engineering) in the *IIER* (Insightful Ideas and Emerging Results Track) track.
+The directories *bob-ms* and *bob_mobile* contain the code available for the case study presented in the paper *["A New Integration Approach to support the Development of Build-time Micro Frontend Architecture Applications"](https://github.com/fernandormoraes/the-bob-project/blob/main/paper/Moraes.Affonso_A%20New%20Integration%20Approach%20to%20support%20the%20Development%20of%20Build-time%20Micro%20Frontend%20Architecture%20Applications.pdf)*, which was accepted at *SBES* (Brazilian Symposium on Software Engineering) in the *IIER* (Insightful Ideas and Emerging Results Track) track.
 
 The paper is available in *paper* directory, this case study is reproducible by the integration between the mobile application and RSBF services (check the paper for more deep details), following the *Bob-ms* section will perfectly show a running case study.
 
