@@ -117,7 +117,7 @@ To run the Flutter application:
 
 ### Login
 
-After following the steps to insert data presented in *Bob-ms* section, it is possible to login in the application by using *email* and *password*.
+Following the steps to insert data presented in *Bob-ms* section or after running microservices using *compose.case-study.yml* file, it is possible to login in the application by using email and password.
 
 The home page will list a caroussel with courses and a Drawer menu, every piece of this UI comes from an RSBF response.
 
