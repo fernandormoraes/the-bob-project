@@ -1,13 +1,13 @@
 
 # The Bob Project 🐢
 
-A case study on Micro Frontend Architecture approaches (Microservices Architecture, Mobile, Web).
+A case study on Micro Frontend Architecture approaches (Microservices Architecture, Mobile, and Web).
 
 ## Publications
 
 The directories *bob-ms* and *bob_mobile* contain the code available for the case study presented in the paper *["A New Integration Approach to support the Development of Build-time Micro Frontend Architecture Applications"](https://github.com/fernandormoraes/the-bob-project/blob/main/paper/Moraes.Affonso_A%20New%20Integration%20Approach%20to%20support%20the%20Development%20of%20Build-time%20Micro%20Frontend%20Architecture%20Applications.pdf)*, which was accepted at *SBES* (Brazilian Symposium on Software Engineering) in the *IIER* (Insightful Ideas and Emerging Results Track) track.
 
-The paper is available in *paper* directory, this case study is reproducible by the integration between the mobile application and RSBF services (check the paper for more deep details), following the *Bob-ms* section will perfectly show a running case study.
+The paper is available in the *paper* directory, this case study is reproducible by the integration between the mobile application and RSBF services (check the paper for more deep details), following the *Bob-ms* section will perfectly show a running case study.
 
 ## Requirements
 
@@ -15,21 +15,15 @@ The paper is available in *paper* directory, this case study is reproducible by 
 - Docker
 - Docker Compose
 - Dart
-- Flutter SDK (3.4 or later)
+- Flutter SDK (3.22.3 or later)
 
 ## Installation
 
 This section presents how to run the case study.
 
-### Bob-ms
-
-The *bob-ms* directory contains all the microservice structure of the case study. Which can be run using *Docker Compose*.
-
-    docker compose -f compose.yml up
-
 ### Run microservices with a data-ready database
 
-To run the application with pre-inserted data in database and avoid the section to prepare database, you can run *compose-case-study.yml* instead of *compose.yml*:
+To run the application with pre-inserted data in the database and avoid the section to prepare database, you can run *compose.case-study.yml* instead of *compose.yml*:
 
     docker compose -f compose.case-study.yml up
 
@@ -38,7 +32,13 @@ Now, it is possible to *login* in the Mobile application with the following user
 *Username:* test@mail.com
 *Password:* 123
 
-The next section (preparing database) can be skipped after running *compose-case-study.yml*
+The section *Preparing Database to reproduce the Case Study* can be *SKIPPED* after running *compose-case-study.yml*.
+
+### Bob-ms
+
+The *bob-ms* directory contains all the microservice structure of the case study. Which can be run using *Docker Compose*.
+
+    docker compose -f compose.yml up
 
 ### Preparing Database to reproduce the Case Study
 
@@ -49,7 +49,7 @@ The first step to ensure a running application is to insert the available user r
     insert into roles (name) values ('USER');
     insert into roles (name) values ('ADMIN');
 
-The second step is to insert a user, the mobile application hasn't a way to do that *yet*, but the microservices already has signup support, so we do have two ways to sign up a user.
+The second step is to insert a user, the mobile application doesn't has a way to do that *yet*, but the microservices already has signup support, so we do have two ways to sign up a user.
 
 Post to SignUp route (http://localhost:8080/api/users/signup), with the following body request (you can change attibutes):
 
@@ -60,21 +60,21 @@ Post to SignUp route (http://localhost:8080/api/users/signup), with the followin
     	"password": "123"
     }
 
-Or inserting manually in database (note that password in encrypted using *BCRYPT*):
+Or inserting manually in the database (note that password in encrypted using *BCRYPT*):
 
     insert into users (email, name, password, username) values ('test@mail.com', 'Test', '$2a$12$MIOta4TsmAYOA3b.YP1QYOJPU35KBWOA1jJLQhdeYEK0ksSZLZe/S', 'test@mail.com'); // Password '123'
 
     insert into users_roles (user_id, roles_id) values (1, 1);
 
-At this moment, the mobile application is ready for a login with email and password, yet, there is no courses available in the home page, let's insert some courses.
+At this moment, the mobile application is ready for a login with email and password, yet, there are no courses available in the home page, let's insert some courses.
 
     insert into course (cover, description) values ('https://media.geeksforgeeks.org/wp-content/uploads/20240104114808/Free-JavaScript-Courses.jpg', 'Javascript Course');
 
-You're ready to go! It is possible to insert multiple courses, just note that *cover* column is a link to an image. The microservices are ready to get modules and content, but the mobile application only supports showing courses *for now*.
+You're ready to go! At this moment, it is possible to insert multiple courses, note that *cover* column is a link to an image. The microservices are ready to get modules and content, but the mobile application only supports showing courses *for now*.
 
 ### Testing RSBF route
 
-It is possible to GET the UI code response from a RSBF.
+It is possible to GET the UI code response from an RSBF.
 
 First step, POST a login
 
@@ -97,7 +97,7 @@ Run GET request on:
 
     http://localhost:3000/api/courses-mobile
 
-And you should be able to receive the response UI code presented in the home page of the mobile application.
+Now you should be able to receive the response UI code presented in the home page of the mobile application.
 
 ### Bob_mobile
 
@@ -108,7 +108,7 @@ After Flutter SDK was installed and with the running microservices, it is necess
     ./bob_mobile/shared_app/const.dart
     const String apiBaseUrl = 'http://127.0.0.1:8080/api'; // Change host/port if necessary to the API Gateway.
 
-*Remember* that Android emulator uses host loopback *10.0.2.2* as alias for localhost.
+*Remember* that Android emulator uses host loopback *10.0.2.2* as an alias for localhost.
 
 To run the Flutter application:
 
@@ -118,7 +118,7 @@ To run the Flutter application:
 
 After following the steps to insert data presented in *Bob-ms* section, it is possible to login in the application by using *email* and *password*.
 
-The home page will list a carroussel with courses and a Drawer menu, every piece of this UI comes from a RSBF response.
+The home page will list a caroussel with courses and a Drawer menu, every piece of this UI comes from an RSBF response.
 
 ### Bob-mfa
 
