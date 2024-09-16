@@ -105,7 +105,9 @@ The *bob_mobile* directory contains the mobile application developed in flutter,
 After Flutter SDK was installed and with the running microservices, it is necessary to set the API Gateway host in Flutter Project.
 
     ./bob_mobile/shared_app/const.dart
-    const String apiBaseUrl = 'http://10.0.2.2:8080/api'; // Change host/port if necessary to the API Gateway.
+    const String apiBaseUrl = 'http://127.0.0.1:8080/api'; // Change host/port if necessary to the API Gateway.
+
+*Remember* that Android emulator uses host loopback *10.0.2.2* as alias for localhost.
 
 To run the Flutter application:
 
