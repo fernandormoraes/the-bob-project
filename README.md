@@ -30,6 +30,7 @@ To run the application with pre-inserted data in the database and avoid the sect
 Now, it is possible to *login* in the Mobile application with the following user:
 
 *Username:* test@mail.com
+
 *Password:* 123
 
 The section *Preparing Database to reproduce the Case Study* can be *SKIPPED* after running *compose-case-study.yml*.
