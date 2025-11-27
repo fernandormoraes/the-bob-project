@@ -13,6 +13,8 @@ dependencies:
   envied: ^0.5.4+1
   # path: ^1.8.0
   dart_eval: ^0.7.9
+  bob_design_system:
+    path: ../../bob-design-system
 
 dev_dependencies:
   build_runner: ^2.4.11
