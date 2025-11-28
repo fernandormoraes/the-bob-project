@@ -1,3 +1,5 @@
+import 'package:bob_design_system/bob_design_system.dart';
+
 class CoursesPage {
   final String widgetCourses;
 
@@ -16,36 +18,30 @@ widget root = Scaffold(
           child: Column(
             children: [
               MaterialIcon(codePoint: 0xe491, size: 54.0),
-              Text(text: ["Welcome"]),
-              Text(text: ["Fernando Moraes"], style: {fontSize: 24.0}),
+              ${DSText.normal(text: "Welcome").toSdui()},
+              ${DSText.header(text: "Fernando Moraes").toSdui()}
             ]
           )
         ),
         ListTile(
-          title: Text(text: ["Logout"]),
+          title: ${DSText.normal(text: "Logout").toSdui()},
           onTap: event 'drawer.logout' { }
         ),
       ],
     )
   ),
-  appBar: AppBar(title: Text(text: ['Dashboard'])),
+  appBar: AppBar(title: ${DSText.normal(text: "Dashboard").toSdui()}),
   body: Column(
     mainAxisAlignment: "start",
     crossAxisAlignment: "start",    
     children: [
-        Padding(
-          padding: [24.0, 0.0, 0.0, 0.0],
-          child: Text(text: ["Courses"], style: {fontSize: 32.0}),
-        ),
-        $widgetCourses
-        Padding(
-          padding: [24.0, 0.0, 0.0, 0.0],
-          child: Text(text: ["Next to watch"], style: {fontSize: 32.0}),
-        ),
-        SizedBox(height: 16.0),
+        ${DSPadding.startLarge().toSdui(DSText.title(text: "Courses").toSdui())},
+        $widgetCourses,
+        ${DSPadding.startLarge().toSdui(DSText.title(text: "Next to watch").toSdui())},
+        SizedBox(height: ${Paddings.medium}),
         Align( 
           alignment: "center",
-          child: Text(text: ["Nothing yet. Let's start some courses?"], style: {fontSize: 16.0})
+          child: ${DSText.normal(text: "Nothing yet. Let\'s start some courses?").toSdui()},
         )
     ])
 );''';

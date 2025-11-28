@@ -1,4 +1,0 @@
-enum DSScrollDirection {
-  horizontal,
-  vertical;
-}

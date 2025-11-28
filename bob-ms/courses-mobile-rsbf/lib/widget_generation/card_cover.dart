@@ -16,7 +16,7 @@ class CardCover {
     return data
         .map((e) => DSCardCover(
                 description: e.description ?? '', coverUrl: e.cover ?? '')
-            .toString())
+            .toSdui())
         .toList();
   }
 }

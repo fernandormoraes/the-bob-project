@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk
+FROM eclipse-temurin:21-jre-ubi10-minimal
 
 RUN microdnf install findutils
 

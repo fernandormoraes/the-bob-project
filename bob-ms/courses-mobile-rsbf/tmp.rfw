@@ -10,77 +10,112 @@ widget root = Scaffold(
           child: Column(
             children: [
               MaterialIcon(codePoint: 0xe491, size: 54.0),
-              Text(text: ["Welcome"]),
-              Text(text: ["Fernando Moraes"], style: {fontSize: 24.0}),
+              Text(
+      text: ["Welcome"],
+      style: {fontSize: 16.0},
+    ),
+              Text(
+      text: ["Fernando Moraes"],
+      style: {fontSize: 24.0},
+    )
             ]
           )
         ),
         ListTile(
-          title: Text(text: ["Logout"]),
+          title: Text(
+      text: ["Logout"],
+      style: {fontSize: 16.0},
+    ),
           onTap: event 'drawer.logout' { }
         ),
       ],
     )
   ),
-  appBar: AppBar(title: Text(text: ['Dashboard'])),
+  appBar: AppBar(title: Text(
+      text: ["Dashboard"],
+      style: {fontSize: 16.0},
+    )),
   body: Column(
     mainAxisAlignment: "start",
     crossAxisAlignment: "start",    
     children: [
         Padding(
-          padding: [24.0, 0.0, 0.0, 0.0],
-          child: Text(text: ["Courses"], style: {fontSize: 32.0}),
-        ),
+  padding: [24.0, 0.0, 0.0, 0.0],
+  child: Text(
+      text: ["Courses"],
+      style: {fontSize: 32.0},
+    )
+),
         Padding(
-  padding: [24.0],
-  child: Card(
-    child: Padding(
-        padding: [8.0],
+    padding: [24.0],
+    child: Card(
         child: SizedBox(
-          height: 170.0,
-          child: ListView(
-            scrollDirection: "horizontal",
-            shrinkWrap: true,
-            itemCount: 2,
-            children: [Padding(
-padding: [16.0], 
-child: Column(
+          height: 180.0,
+          child: Padding(
+    padding: [8.0],
+    child: ListView(
+          scrollDirection: "horizontal",
+          shrinkWrap: true,
+          itemCount: 2,
+          children: [Padding(
+    padding: [16.0],
+    child: Column(
   mainAxisAlignment: "start",
   crossAxisAlignment: "start",
   children: [
-      Text(text: "CURSO DE JAVA"),
-      SizedBox(height: 8.0),
-      SizedBox(height: 100.0, width: 200.0, 
-        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToO5nvgGaLTBS2sDH9oMcj1qhVF9EX_xzOtg&s")
+    Text(text: "Javascript Course"),
+    SizedBox(height: 8.0),
+    SizedBox(
+      height: 100.0, 
+      width: 200.0, 
+      child: ImageNetwork(
+        height: 100.0, 
+        width: 200.0, 
+        url: "https://media.geeksforgeeks.org/wp-content/uploads/20240104114808/Free-JavaScript-Courses.jpg"
       )
-    ]
-  )
+    )
+  ]
+)
 ), Padding(
-padding: [16.0], 
-child: Column(
+    padding: [16.0],
+    child: Column(
   mainAxisAlignment: "start",
   crossAxisAlignment: "start",
   children: [
-      Text(text: "CURSO DE PYTHON"),
-      SizedBox(height: 8.0),
-      SizedBox(height: 100.0, width: 200.0, 
-        child: ImageNetwork(height: 100.0, width: 200.0, url: "https://asimov.academy/wp-content/uploads/2023/12/curso-python-basico.webp")
+    Text(text: "Java Course"),
+    SizedBox(height: 8.0),
+    SizedBox(
+      height: 100.0, 
+      width: 200.0, 
+      child: ImageNetwork(
+        height: 100.0, 
+        width: 200.0, 
+        url: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230305131111/Java-programming.png"
       )
-    ]
-  )
+    )
+  ]
+)
 )]
-          )
         )
-      ))
-    ),
-        Padding(
-          padding: [24.0, 0.0, 0.0, 0.0],
-          child: Text(text: ["Next to watch"], style: {fontSize: 32.0}),
+    
+)
         ),
+      )
+),
+        Padding(
+  padding: [24.0, 0.0, 0.0, 0.0],
+  child: Text(
+      text: ["Next to watch"],
+      style: {fontSize: 32.0},
+    )
+),
         SizedBox(height: 16.0),
         Align( 
           alignment: "center",
-          child: Text(text: ["Nothing yet. Let's start some courses?"], style: {fontSize: 16.0})
+          child: Text(
+      text: ["Nothing yet. Let's start some courses?"],
+      style: {fontSize: 16.0},
+    ),
         )
     ])
 );
