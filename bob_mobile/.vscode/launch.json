@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "bob_mobile",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "bob_mobile (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "bob_mobile (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "home_app",
+            "cwd": "home_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "home_app (profile mode)",
+            "cwd": "home_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "home_app (release mode)",
+            "cwd": "home_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "shared_app",
+            "cwd": "shared_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "shared_app (profile mode)",
+            "cwd": "shared_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "shared_app (release mode)",
+            "cwd": "shared_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

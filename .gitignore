@@ -245,4 +245,4 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter,kotlin,node,java
 
-./bob-ms/db
+/bob-ms/db

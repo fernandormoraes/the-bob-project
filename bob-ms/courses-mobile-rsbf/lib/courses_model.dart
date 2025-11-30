@@ -1,12 +1,22 @@
 class CoursesResponseModel {
   final String? message;
+  final String? userName;
   final List<Data>? data;
 
-  CoursesResponseModel({this.message, this.data});
+  CoursesResponseModel({this.message, this.userName, this.data});
 
   CoursesResponseModel.fromJson(Map<String, dynamic> json)
       : message = json['message'],
+        userName = '',
         data = List<Data>.from(json['data'].map((d) => Data.fromJson(d)));
+
+  CoursesResponseModel copyWithUsername(String username) {
+    return CoursesResponseModel(
+      message: message,
+      userName: username,
+      data: data,
+    );
+  }
 }
 
 class Data {

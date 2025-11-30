@@ -19,8 +19,10 @@ class _HomePageState extends State<HomePage> {
   final DynamicContent _data = DynamicContent();
 
   static const LibraryName coreName = LibraryName(<String>['core', 'widgets']);
-  static const LibraryName coreMaterial =
-      LibraryName(<String>['core', 'material']);
+  static const LibraryName coreMaterial = LibraryName(<String>[
+    'core',
+    'material',
+  ]);
   static const LibraryName mainName = LibraryName(<String>['main']);
 
   @override
@@ -31,9 +33,11 @@ class _HomePageState extends State<HomePage> {
     _runtime.update(coreMaterial, createRemoteMaterialWidgets());
 
     _runtime.update(
-        mainName,
-        parseLibraryFile(
-            '''import core.widgets; import core.material; widget root = Scaffold(body: Center(child: CircularProgressIndicator()));'''));
+      mainName,
+      parseLibraryFile(
+        '''import core.widgets; import core.material; widget root = Scaffold(body: Center(child: CircularProgressIndicator()));''',
+      ),
+    );
 
     Future.delayed(const Duration(seconds: 1)).then((value) {
       widget.homeService.getCourses().then((value) {

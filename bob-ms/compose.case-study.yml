@@ -45,7 +45,8 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./courses-mobile-rsbf:/app        
+      - ./courses-mobile-rsbf:/app
+      - ./bob-design-system:/bob-design-system
   api-gateway:
     entrypoint: ./.docker/entrypoint.sh
     container_name: api-gateway
