@@ -15,7 +15,10 @@ class CoursesPageBuilder {
 
     widgetCourses = CoursesDisplay(cards: cards).generate();
 
-    coursesPage = CoursesPage(widgetCourses: widgetCourses);
+    coursesPage = CoursesPage(
+      widgetCourses: widgetCourses,
+      username: model.userName ?? 'User',
+    );
   }
 
   String generate() {

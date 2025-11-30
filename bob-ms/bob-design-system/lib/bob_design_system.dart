@@ -10,3 +10,4 @@ export 'src/organisms/ds_empty_state.dart';
 export 'src/template/ds_courses_template.dart';
 export 'src/template/ds_card_cover.dart';
 export 'src/molecules/ds_text.dart';
+export 'src/template/ds_app_bar.dart';

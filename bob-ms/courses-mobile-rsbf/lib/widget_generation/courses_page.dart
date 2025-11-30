@@ -2,8 +2,9 @@ import 'package:bob_design_system/bob_design_system.dart';
 
 class CoursesPage {
   final String widgetCourses;
+  final String username;
 
-  CoursesPage({required this.widgetCourses});
+  CoursesPage({required this.widgetCourses, required this.username});
 
   String generate() {
     return '''import core.widgets;
@@ -19,7 +20,7 @@ widget root = Scaffold(
             children: [
               MaterialIcon(codePoint: 0xe491, size: 54.0),
               ${DSText.normal(text: "Welcome").toSdui()},
-              ${DSText.header(text: "Fernando Moraes").toSdui()}
+              ${DSText.header(text: username).toSdui()}
             ]
           )
         ),
@@ -30,7 +31,7 @@ widget root = Scaffold(
       ],
     )
   ),
-  appBar: AppBar(title: ${DSText.normal(text: "Dashboard").toSdui()}),
+  appBar: ${DSAppBar(title: "Dashboard").toSdui()},
   body: Column(
     mainAxisAlignment: "start",
     crossAxisAlignment: "start",    
