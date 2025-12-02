@@ -31,7 +31,12 @@ class Data {
       : id = json['id'],
         description = json['description'],
         cover = json['cover'],
-        module = List<Module>.from(json['module'].map((d) => Data.fromJson(d)));
+        module = json['module'] is List
+            ? List<Module>.from(
+                (json['module'] as List<dynamic>)
+                    .map((d) => Module.fromJson(d)),
+              )
+            : [];
 }
 
 class Module {
@@ -44,8 +49,9 @@ class Module {
   Module.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         description = json['description'],
-        content =
-            List<Content>.from(json['content'].map((d) => Data.fromJson(d)));
+        content = List<Content>.from(
+          json['content']?.map((d) => Content.fromJson(d)),
+        );
 }
 
 class Content {

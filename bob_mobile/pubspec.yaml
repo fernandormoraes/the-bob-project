@@ -43,6 +43,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_bloc: ^8.1.5
   flutter_dotenv: ^6.0.0
+  fluttertoast: ^9.0.0
 
 dev_dependencies:
   flutter_test:

@@ -171,7 +171,57 @@ insert into users (email, name, password, username) values ('test@mail.com', 'Te
 
 insert into users_roles (user_id, roles_id) values (1, 1);
 
+INSERT INTO "module" (description) VALUES ('Introduction to Javascript');
+INSERT INTO "module" (description) VALUES ('Introduction to Java');
+
 insert into course (cover, description) values ('https://media.geeksforgeeks.org/wp-content/uploads/20240104114808/Free-JavaScript-Courses.jpg', 'Javascript Course');
 
 insert into course (cover, description) values ('https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230305131111/Java-programming.png', 'Java Course');
 
+INSERT INTO course_module (course_id, module_id) VALUES (1, 1);
+INSERT INTO course_module (course_id, module_id) VALUES (2, 2);
+
+INSERT INTO content (
+    attachment,
+    cover,
+    created_at,
+    description,
+    subtitle,
+    title,
+    updated_at,
+    video
+)
+VALUES (
+    'attachment-js.pdf',
+    'https://example.com/js-cover.png',
+    CURRENT_DATE,
+    'Introduction to JavaScript',
+    'Getting Started',
+    'JS Intro Lesson',
+    CURRENT_DATE,
+    'https://www.youtube.com/watch?v=hNSVVRQ1bmE'
+);
+
+INSERT INTO content (
+    attachment,
+    cover,
+    created_at,
+    description,
+    subtitle,
+    title,
+    updated_at,
+    video
+)
+VALUES (
+    'attachment-js.pdf',
+    'https://example.com/js-cover.png',
+    CURRENT_DATE,
+    'Introduction to Java',
+    'Getting Started',
+    'Java Intro Lesson',
+    CURRENT_DATE,
+    'https://www.youtube.com/watch?v=hNSVVRQ1bmE'
+);
+
+INSERT INTO module_content (module_id, content_id) VALUES (1, 1);
+INSERT INTO module_content (module_id, content_id) VALUES (2, 2);
