@@ -1,5 +1,6 @@
 import 'package:bob_mobile/login/login_page.dart';
-import 'package:bob_mobile/login/login_service.dart';
+import 'package:bob_mobile/services/user_service.dart';
+import 'package:bob_mobile/signup/signup_page.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:home_app/home_app.dart';
@@ -19,5 +20,6 @@ class AppModule extends Module {
   void routes(r) {
     r.child('/', child: (context) => LoginPage());
     r.child('/home', child: (context) => HomePage());
+    r.child('/signup', child: (context) => SignupPage());
   }
 }

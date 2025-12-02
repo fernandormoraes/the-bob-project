@@ -15,8 +15,11 @@ class CardCover {
 
     return data
         .map((e) => DSCardCover(
-                description: e.description ?? '', coverUrl: e.cover ?? '')
-            .toSdui())
+              description: e.description ?? '',
+              coverUrl: e.cover ?? '',
+              videoUrl:
+                  e.module?.firstOrNull?.content?.firstOrNull?.video ?? '',
+            ).toSdui())
         .toList();
   }
 }
