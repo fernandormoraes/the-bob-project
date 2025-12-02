@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:home_app/home_service.dart';
 import 'package:rfw/formats.dart';
 import 'package:rfw/rfw.dart';
+import 'package:shared_app/analytics/analytics_module.dart';
 import 'package:shared_app/remote_material_widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -61,6 +62,7 @@ class _HomePageState extends State<HomePage> {
         widget: const FullyQualifiedWidgetName(mainName, 'root'),
         onEvent: (String name, DynamicMap arguments) {
           if (name == 'drawer.logout') {
+            AnalyticsModule.sendEvent('logout');
             Modular.to.navigate('/');
           }
           // The example above does not have any way to trigger events, but if it

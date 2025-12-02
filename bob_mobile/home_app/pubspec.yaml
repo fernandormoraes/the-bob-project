@@ -17,6 +17,8 @@ dependencies:
   shared_preferences: ^2.0.8
   shared_app:
     path: ../shared_app    
+  flutter_dotenv: ^6.0.0
+
 
 dev_dependencies:
   flutter_test:
