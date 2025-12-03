@@ -53,7 +53,7 @@ class _SignupPageState extends State<SignupPage> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Please use your credentials to login',
+                      'Please complete the form to sign up',
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ),
