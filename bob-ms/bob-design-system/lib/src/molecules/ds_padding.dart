@@ -15,6 +15,13 @@ final class DSPadding {
     required this.bottom,
   });
 
+  const DSPadding.opt({
+    this.start = 0,
+    this.top = 0,
+    this.end = 0,
+    this.bottom = 0,
+  });
+
   DSPadding.all(double value)
     : start = value,
       bottom = value,

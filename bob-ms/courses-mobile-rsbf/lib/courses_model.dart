@@ -19,6 +19,31 @@ class CoursesResponseModel {
   }
 }
 
+final class CourseByIdResponseModel {
+  final String? message;
+  final String? userName;
+  final Data? data;
+
+  CourseByIdResponseModel({
+    this.message,
+    this.userName,
+    this.data,
+  });
+
+  CourseByIdResponseModel.fromJson(Map<String, dynamic> json)
+      : message = json['message'],
+        userName = '',
+        data = Data.fromJson(json['data']);
+
+  CourseByIdResponseModel copyWithUsername(String username) {
+    return CourseByIdResponseModel(
+      message: message,
+      userName: username,
+      data: data,
+    );
+  }
+}
+
 class Data {
   final int? id;
   final String? description;
