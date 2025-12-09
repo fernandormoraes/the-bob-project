@@ -50,8 +50,6 @@ class _HomePageState extends State<HomePage> {
         _data.update('greet', <String, Object>{'name': 'World'});
       });
     });
-
-    // Remote widget library:
   }
 
   @override
@@ -62,6 +60,24 @@ class _HomePageState extends State<HomePage> {
         data: _data,
         widget: const FullyQualifiedWidgetName(mainName, 'root'),
         onEvent: (String name, DynamicMap arguments) {
+          if (name == 'card_cover.navigate') {
+            final args = arguments['arguments'];
+
+            if (args is! Map) {
+              return;
+            }
+
+            final courseId = args['id'] as String? ?? '';
+
+            if (courseId.isNotEmpty) {
+              AnalyticsModule.sendEvent(
+                'navigate_course_detail',
+                <String, Object>{'course_id': courseId},
+              );
+
+              Modular.to.pushNamed('/home/$courseId');
+            }
+          }
           if (name == 'drawer.logout') {
             AnalyticsModule.sendEvent('logout');
             Modular.to.navigate('/');

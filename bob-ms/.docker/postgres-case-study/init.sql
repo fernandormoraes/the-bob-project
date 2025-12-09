@@ -225,3 +225,101 @@ VALUES (
 
 INSERT INTO module_content (module_id, content_id) VALUES (1, 1);
 INSERT INTO module_content (module_id, content_id) VALUES (2, 2);
+
+
+/* =========================================================
+   NOVOS MÓDULOS
+   ========================================================= */
+
+INSERT INTO "module" (description) VALUES ('JavaScript Basics');      -- id 3
+INSERT INTO "module" (description) VALUES ('Advanced JavaScript');    -- id 4
+INSERT INTO "module" (description) VALUES ('Java Fundamentals');      -- id 5
+INSERT INTO "module" (description) VALUES ('Advanced Java');          -- id 6
+
+
+/* =========================================================
+   RELAÇÃO COURSE ⇄ MODULE
+   ========================================================= */
+
+INSERT INTO course_module (course_id, module_id) VALUES (1, 3);
+INSERT INTO course_module (course_id, module_id) VALUES (1, 4);
+INSERT INTO course_module (course_id, module_id) VALUES (2, 5);
+INSERT INTO course_module (course_id, module_id) VALUES (2, 6);
+
+
+/* =========================================================
+   CONTEÚDOS — JAVASCRIPT
+   ========================================================= */
+
+/* Module 1 — Introduction to JavaScript (id 1) */
+INSERT INTO content (attachment, cover, created_at, description, subtitle, title, updated_at, video) VALUES
+('js-variables.pdf','https://img.youtube.com/vi/W6NZfCO5SIk/hqdefault.jpg',CURRENT_DATE,'JavaScript Variables','Basics','Variables',CURRENT_DATE,'https://www.youtube.com/watch?v=W6NZfCO5SIk'),
+('js-functions.pdf','https://img.youtube.com/vi/PKwu15ldZ7k/hqdefault.jpg',CURRENT_DATE,'JavaScript Functions','Basics','Functions',CURRENT_DATE,'https://www.youtube.com/watch?v=PKwu15ldZ7k'),
+('js-conditions.pdf','https://img.youtube.com/vi/IsG4Xd6LlsM/hqdefault.jpg',CURRENT_DATE,'JavaScript Conditions','Flow','If / Else',CURRENT_DATE,'https://www.youtube.com/watch?v=IsG4Xd6LlsM'),
+('js-loops.pdf','https://img.youtube.com/vi/s9wW2PpJsmQ/hqdefault.jpg',CURRENT_DATE,'JavaScript Loops','Flow','Loops',CURRENT_DATE,'https://www.youtube.com/watch?v=s9wW2PpJsmQ');
+
+INSERT INTO module_content (module_id, content_id) VALUES
+(1, 3),(1, 4),(1, 5),(1, 6);
+
+
+/* Module 3 — JavaScript Basics (id 3) */
+INSERT INTO content (attachment, cover, created_at, description, subtitle, title, updated_at, video) VALUES
+('js-arrays.pdf','https://img.youtube.com/vi/oigfaZ5ApsM/hqdefault.jpg',CURRENT_DATE,'JavaScript Arrays','Core','Arrays',CURRENT_DATE,'https://www.youtube.com/watch?v=oigfaZ5ApsM'),
+('js-objects.pdf','https://img.youtube.com/vi/PFmuCDHHpwk/hqdefault.jpg',CURRENT_DATE,'JavaScript Objects','Core','Objects',CURRENT_DATE,'https://www.youtube.com/watch?v=PFmuCDHHpwk'),
+('js-dom.pdf','https://img.youtube.com/vi/0ik6X4DJKCc/hqdefault.jpg',CURRENT_DATE,'DOM Manipulation','Browser','DOM',CURRENT_DATE,'https://www.youtube.com/watch?v=0ik6X4DJKCc'),
+('js-events.pdf','https://img.youtube.com/vi/YiOlaiscqDY/hqdefault.jpg',CURRENT_DATE,'JavaScript Events','Browser','Events',CURRENT_DATE,'https://www.youtube.com/watch?v=YiOlaiscqDY'),
+('js-fetch.pdf','https://img.youtube.com/vi/cuEtnrL9-H0/hqdefault.jpg',CURRENT_DATE,'Fetch API','Async','Fetch',CURRENT_DATE,'https://www.youtube.com/watch?v=cuEtnrL9-H0');
+
+INSERT INTO module_content (module_id, content_id) VALUES
+(3, 7),(3, 8),(3, 9),(3, 10),(3, 11);
+
+
+/* Module 4 — Advanced JavaScript (id 4) */
+INSERT INTO content (attachment, cover, created_at, description, subtitle, title, updated_at, video) VALUES
+('js-async.pdf','https://img.youtube.com/vi/V_Kr9OSfDeU/hqdefault.jpg',CURRENT_DATE,'Async JavaScript','Advanced','Async / Await',CURRENT_DATE,'https://www.youtube.com/watch?v=V_Kr9OSfDeU'),
+('js-promises.pdf','https://img.youtube.com/vi/DHvZLI7Db8E/hqdefault.jpg',CURRENT_DATE,'JavaScript Promises','Advanced','Promises',CURRENT_DATE,'https://www.youtube.com/watch?v=DHvZLI7Db8E'),
+('js-closures.pdf','https://img.youtube.com/vi/1JsJx1x35c0/hqdefault.jpg',CURRENT_DATE,'Closures','Advanced','Closures',CURRENT_DATE,'https://www.youtube.com/watch?v=1JsJx1x35c0'),
+('js-modules.pdf','https://img.youtube.com/vi/cRHQNNcYf6s/hqdefault.jpg',CURRENT_DATE,'ES Modules','Advanced','Modules',CURRENT_DATE,'https://www.youtube.com/watch?v=cRHQNNcYf6s'),
+('js-performance.pdf','https://img.youtube.com/vi/Z5n7PXB9O8I/hqdefault.jpg',CURRENT_DATE,'Performance','Advanced','Optimization',CURRENT_DATE,'https://www.youtube.com/watch?v=Z5n7PXB9O8I');
+
+INSERT INTO module_content (module_id, content_id) VALUES
+(4, 12),(4, 13),(4, 14),(4, 15),(4, 16);
+
+
+/* =========================================================
+   CONTEÚDOS — JAVA
+   ========================================================= */
+
+/* Module 2 — Introduction to Java (id 2) */
+INSERT INTO content (attachment, cover, created_at, description, subtitle, title, updated_at, video) VALUES
+('java-variables.pdf','https://img.youtube.com/vi/grEKMHGYyns/hqdefault.jpg',CURRENT_DATE,'Java Variables','Basics','Variables',CURRENT_DATE,'https://www.youtube.com/watch?v=grEKMHGYyns'),
+('java-methods.pdf','https://img.youtube.com/vi/7WiJGTPuVeU/hqdefault.jpg',CURRENT_DATE,'Java Methods','Basics','Methods',CURRENT_DATE,'https://www.youtube.com/watch?v=7WiJGTPuVeU'),
+('java-flow.pdf','https://img.youtube.com/vi/ldYLYRNaucM/hqdefault.jpg',CURRENT_DATE,'Control Flow','Flow','If / Switch',CURRENT_DATE,'https://www.youtube.com/watch?v=ldYLYRNaucM'),
+('java-loops.pdf','https://img.youtube.com/vi/6i7h0hZNPtM/hqdefault.jpg',CURRENT_DATE,'Java Loops','Flow','Loops',CURRENT_DATE,'https://www.youtube.com/watch?v=6i7h0hZNPtM');
+
+INSERT INTO module_content (module_id, content_id) VALUES
+(2, 17),(2, 18),(2, 19),(2, 20);
+
+
+/* Module 5 — Java Fundamentals (id 5) */
+INSERT INTO content (attachment, cover, created_at, description, subtitle, title, updated_at, video) VALUES
+('java-oop.pdf','https://img.youtube.com/vi/6T_HgnjoYwM/hqdefault.jpg',CURRENT_DATE,'Classes and Objects','OOP','Classes',CURRENT_DATE,'https://www.youtube.com/watch?v=6T_HgnjoYwM'),
+('java-inheritance.pdf','https://img.youtube.com/vi/8s9I1G4tXhA/hqdefault.jpg',CURRENT_DATE,'Inheritance','OOP','Inheritance',CURRENT_DATE,'https://www.youtube.com/watch?v=8s9I1G4tXhA'),
+('java-interfaces.pdf','https://img.youtube.com/vi/kdQf6pwpdcE/hqdefault.jpg',CURRENT_DATE,'Interfaces','OOP','Interfaces',CURRENT_DATE,'https://www.youtube.com/watch?v=kdQf6pwpdcE'),
+('java-collections.pdf','https://img.youtube.com/vi/viTHc_4XfCA/hqdefault.jpg',CURRENT_DATE,'Collections Framework','Core','Collections',CURRENT_DATE,'https://www.youtube.com/watch?v=viTHc_4XfCA'),
+('java-exceptions.pdf','https://img.youtube.com/vi/1XAfapkBQjk/hqdefault.jpg',CURRENT_DATE,'Exception Handling','Core','Exceptions',CURRENT_DATE,'https://www.youtube.com/watch?v=1XAfapkBQjk');
+
+INSERT INTO module_content (module_id, content_id) VALUES
+(5, 21),(5, 22),(5, 23),(5, 24),(5, 25);
+
+
+/* Module 6 — Advanced Java (id 6) */
+INSERT INTO content (attachment, cover, created_at, description, subtitle, title, updated_at, video) VALUES
+('java-streams.pdf','https://img.youtube.com/vi/t1-YZ6bF-g0/hqdefault.jpg',CURRENT_DATE,'Streams API','Advanced','Streams',CURRENT_DATE,'https://www.youtube.com/watch?v=t1-YZ6bF-g0'),
+('java-threads.pdf','https://img.youtube.com/vi/Ws7l9xF4kHk/hqdefault.jpg',CURRENT_DATE,'Multithreading','Advanced','Threads',CURRENT_DATE,'https://www.youtube.com/watch?v=Ws7l9xF4kHk'),
+('java-jvm.pdf','https://img.youtube.com/vi/ZBJ0u9MaKtM/hqdefault.jpg',CURRENT_DATE,'JVM Internals','Advanced','JVM',CURRENT_DATE,'https://www.youtube.com/watch?v=ZBJ0u9MaKtM'),
+('java-spring.pdf','https://img.youtube.com/vi/9SGDpanrc8U/hqdefault.jpg',CURRENT_DATE,'Spring Boot','Advanced','Spring',CURRENT_DATE,'https://www.youtube.com/watch?v=9SGDpanrc8U'),
+('java-performance.pdf','https://img.youtube.com/vi/_i6k7J0Ggyc/hqdefault.jpg',CURRENT_DATE,'Performance Tuning','Advanced','Optimization',CURRENT_DATE,'https://www.youtube.com/watch?v=_i6k7J0Ggyc');
+
+INSERT INTO module_content (module_id, content_id) VALUES
+(6, 26),(6, 27),(6, 28),(6, 29),(6, 30);

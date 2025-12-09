@@ -20,6 +20,10 @@ class AppModule extends Module {
   void routes(r) {
     r.child('/', child: (context) => LoginPage());
     r.child('/home', child: (context) => HomePage());
+    r.child(
+      '/home/:id',
+      child: (context) => CourseDetailPage(id: r.args.params['id'] ?? ''),
+    );
     r.child('/signup', child: (context) => SignupPage());
   }
 }

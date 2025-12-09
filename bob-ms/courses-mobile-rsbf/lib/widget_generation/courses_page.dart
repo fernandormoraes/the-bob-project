@@ -10,29 +10,8 @@ class CoursesPage {
     return '''import core.widgets;
 import core.material;
 
-widget root = Scaffold(
-  drawer: Drawer(
-    child: ListView(
-      padding: [0.0],
-      children: [
-        DrawerHeader(
-          child: Column(
-            children: [
-              MaterialIcon(codePoint: 0xe491, size: 54.0),
-              ${DSText.normal(text: "Welcome").toSdui()},
-              ${DSText.header(text: username).toSdui()}
-            ]
-          )
-        ),
-        ListTile(
-          title: ${DSText.normal(text: "Logout").toSdui()},
-          onTap: event 'drawer.logout' { }
-        ),
-      ],
-    )
-  ),
-  appBar: ${DSAppBar(title: "Dashboard").toSdui()},
-  body: Column(
+widget root = ${DSScaffold(appBarTitle: "Dashboard", username: username, body: '''
+Column(
     mainAxisAlignment: "start",
     crossAxisAlignment: "start",    
     children: [
@@ -45,6 +24,7 @@ widget root = Scaffold(
           child: ${DSText.normal(text: "Nothing yet. Let\'s start some courses?").toSdui()},
         )
     ])
-);''';
+    ''').toSdui()} 
+''';
   }
 }

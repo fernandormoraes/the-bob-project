@@ -4,11 +4,15 @@ class DSCardCover {
   final String description;
   final String coverUrl;
   final String videoUrl;
+  final String onLongPress;
+  final String onTap;
 
   DSCardCover({
     required this.description,
     required this.coverUrl,
     required this.videoUrl,
+    required this.onLongPress,
+    required this.onTap,
   });
 
   String toSdui() {
@@ -19,7 +23,8 @@ class DSCardCover {
     Text(text: "$description"),
     SizedBox(height: ${Paddings.small}),
     InkWell(
-      onTap: event 'card_cover.play_video' { arguments: {"videoUrl": "$videoUrl"} },
+      onLongPress: $onLongPress,
+      onTap: $onTap,
       child: SizedBox(
         height: 100.0, 
         width: 200.0, 

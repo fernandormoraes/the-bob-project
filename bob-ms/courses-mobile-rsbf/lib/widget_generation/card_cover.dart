@@ -13,13 +13,19 @@ class CardCover {
       return [];
     }
 
-    return data
-        .map((e) => DSCardCover(
+    return data.map((e) {
+      final videoUrl = e.module?.firstOrNull?.content?.firstOrNull?.video ?? '';
+
+      return DSCardCover(
               description: e.description ?? '',
               coverUrl: e.cover ?? '',
               videoUrl:
                   e.module?.firstOrNull?.content?.firstOrNull?.video ?? '',
-            ).toSdui())
-        .toList();
+              onLongPress:
+                  "event 'card_cover.play_video' { arguments: {'$videoUrl': '$videoUrl'} }",
+              onTap:
+                  "event 'card_cover.navigate' { arguments: {'id': '${e.id ?? 0}'} }")
+          .toSdui();
+    }).toList();
   }
 }

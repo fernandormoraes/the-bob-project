@@ -10,8 +10,6 @@ class CoursesService {
   static const _coursesUrl = 'http://api-gateway:8080/api/courses/';
 
   Future<CoursesResponseModel> getCourses(String authorization) async {
-    print(authorization);
-
     final response = await _dio.get(
       _coursesUrl,
       options: Options(
@@ -30,5 +28,24 @@ class CoursesService {
     final coursesModelWithUsername = coursesModel.copyWithUsername(username);
 
     return coursesModelWithUsername;
+  }
+
+  Future<CourseByIdResponseModel> getCourseById(
+    String authorization,
+    int id,
+  ) async {
+    final response = await _dio.get(
+      _coursesUrl + id.toString(),
+      options: Options(
+        headers: {
+          'Authorization': authorization,
+        },
+      ),
+    );
+
+    print(response.data);
+    print(response.statusCode);
+
+    return CourseByIdResponseModel.fromJson(response.data);
   }
 }
