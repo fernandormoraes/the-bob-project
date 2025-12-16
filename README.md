@@ -1,7 +1,7 @@
 
 # The Bob Project 🐢
 
-A case study on Micro Frontend Architecture approaches (Microservices Architecture, Mobile, and Web).
+A case study on Micro Frontend Architecture approaches (Microservices Architecture, SDUI, Mobile, and Web).
 
 ## Publications
 
